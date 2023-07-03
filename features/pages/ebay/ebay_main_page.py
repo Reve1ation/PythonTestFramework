@@ -1,4 +1,5 @@
 from features.pages.ebay.generic_ebay_page import GenericEbayPage
+from features.pages.ebay.ebay_main_page_locators import EbayMainPageLocators
 
 
 class EbayMainPage(GenericEbayPage):
@@ -10,59 +11,59 @@ class EbayMainPage(GenericEbayPage):
 
     @property
     def search_input(self):
-        return self.find_element(id='gh-ac')
+        return self.find_element(id=EbayMainPageLocators.SEARCH_INPUT.get('id'))
 
     @property
     def search_button(self):
-        return self.find_element(xpath='//input[@type="submit"]')
+        return self.find_element(xpath=EbayMainPageLocators.SEARCH_BUTTON.get('xpath'))
 
     @property
-    def sigh_in_button(self):
-        return self.find_element(xpath='//span[@id="gh-ug"]/a')
+    def sign_in_button(self):
+        return self.find_element(xpath=EbayMainPageLocators.SIGN_IN_BUTTON.get('xpath'))
 
     @property
     def register_button(self):
-        return self.find_element(xpath='//span[@id="gh-ug"]/span/a')
+        return self.find_element(xpath=EbayMainPageLocators.REGISTER_BUTTON.get('xpath'))
 
     @property
     def daily_deals_button(self):
-        return self.find_element(xpath='//li[@id="gh-p-1"]/a')
+        return self.find_element(xpath=EbayMainPageLocators.DAILY_DEALS_BUTTON.get('xpath'))
 
     @property
     def brand_outlet_button(self):
-        return self.find_element(xpath='//li[@id="gh-p-4"]/a')
+        return self.find_element(xpath=EbayMainPageLocators.BRAND_OUTLET_BUTTON.get('xpath'))
 
     @property
     def help_contacts_button(self):
-        return self.find_element(xpath='//li[@id="gh-p-3"]/a')
+        return self.find_element(xpath=EbayMainPageLocators.HELP_CONTACTS_BUTTON.get('xpath'))
 
     @property
     def sell_button(self):
-        return self.find_element(xpath='//li[@id="gh-p-2"]/a')
+        return self.find_element(xpath=EbayMainPageLocators.SELL_BUTTON.get('xpath'))
 
     @property
     def watchlist_button(self):
-        return self.find_element(css='li[id="gh-wl-click"] a.watchlist-menu')
+        return self.find_element(css=EbayMainPageLocators.WATCHLIST_BUTTON.get('xpath'))
 
     @property
     def my_ebay_button(self):
-        return self.find_element(css='li[id="gh-eb-My"] a[class="gh-eb-li-a gh-rvi-menu"]')
+        return self.find_element(css=EbayMainPageLocators.MY_EBAY_BUTTON.get('css'))
 
     @property
     def my_ebay_list(self):
-        return self.find_elements(xpath='//ul[@id="gh-ul-nav"]/li')
+        return self.find_elements(xpath=EbayMainPageLocators.MY_EBAY_LIST.get('xpath'))
 
     @property
     def shop_by_category_button(self):
-        return self.find_element(xpath='//button[@id="gh-shop-a"]')
+        return self.find_element(xpath=EbayMainPageLocators.SHOP_BY_CATEGORY_BUTTON.get('xpath'))
 
     @property
     def saved_tab(self):
-        return self.find_element(xpath='//li[@class="saved"]')
+        return self.find_element(xpath=EbayMainPageLocators.SAVED_TAB.get('xpath'))
 
     @property
     def tabs_list(self):
-        return self.find_elements(xpath='//li[@data-currenttabindex]')
+        return self.find_elements(xpath=EbayMainPageLocators.TABS_LIST.get('xpath'))
 
     def load(self):
         self.driver.get(self.URL)
