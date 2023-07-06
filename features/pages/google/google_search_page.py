@@ -16,5 +16,4 @@ class GoogleSearchPage(Page):
         return self.find_elements(css='.g')
 
     def load(self):
-        self.logger.info(self.URL)
         self.driver.get(self.URL)

@@ -26,7 +26,6 @@ class EbaySearchResultsPage(GenericEbayPage):
         for index, element in enumerate(self.search_results):
             if search_text.lower() not in element.text.lower():
                 errors_counters += 1
-                self.logger.error(f"In the elements with index:{index} has no {search_text} in {element.text}")
         if errors_counters > 0:
             return False
         return True
