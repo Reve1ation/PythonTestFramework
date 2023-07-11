@@ -1,4 +1,5 @@
 from features.pages.page import Page
+from features.pages.widgets.add_to_cart_widget_locators import AddToCartWidgetLocators
 
 
 class AddToCartWidget(Page):
@@ -8,16 +9,14 @@ class AddToCartWidget(Page):
         super().__init__(context)
         self.context = context
 
-    @property
     def pop_up_header(self):
-        return self.find_element(xpath='//div[@data-testid="ux-overlay"]//div[@class="app-atc-layer-header-wrapper"]/h2')
+        return self.find_element(AddToCartWidgetLocators.POP_UP_HEADER)
 
-    @property
     def close_pop_up_button(self):
-        return self.find_element(xpath='//button[@class="clzBtn viicon-close"]')
+        return self.find_element(AddToCartWidgetLocators.CLOSE_POP_UP_BUTTON)
 
     def close(self):
-        self.close_pop_up_button.click()
+        self.close_pop_up_button().click()
 
     def item_is_added(self):
-        return self.ITEM_ADDED_TEXT in self.pop_up_header.text
+        return self.ITEM_ADDED_TEXT in self.pop_up_header().text

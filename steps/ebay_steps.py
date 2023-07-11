@@ -8,8 +8,7 @@ from features.pages.ebay.ebay_search_results_page import EbaySearchResultsPage
 @when('the user enters "{search_text}" in the search bar')
 def step_when_user_enters_to_search_bar(context, search_text):
     context.search_results = search_text
-    context.page.search_input.clear()
-    context.page.search_input.send_keys(search_text)
+    context.page.search_for_item(search_text)
 
 
 @when('the user selects the "random" item')
@@ -42,9 +41,9 @@ def step_when_user_selects_sell_filter(context, value):
     context.page = EbaySearchResultsPage(context)
     match value:
         case "Auction":
-            context.page.sell_type_filter_auction.click()
+            context.page.sell_type_filter_auction().click()
         case "Buy It Now":
-            context.page.sell_type_filter_buy_now.click()
+            context.page.sell_type_filter_buy_now().click()
         case _:
             raise Exception(f"{value} is not present in the filter")
 
