@@ -1,39 +1,38 @@
 Feature: eBay.com Functionality
 
   @id_1
-  Scenario: User can search for a product
-    Given the user is on the eBay main page
-    When the user enters "iPhone" in the search bar
-    And the user clicks the "Search" button
-    Then the eBay search results page is displayed
+  Scenario: User can search for a product 11
+    Given the user opens eBay main page
+    Then the eBay main page is displayed
+    When the user searches "iPhone"
+    Then the eBay search results page has specific results
 
   @id_2
   Scenario: User can add an item to the cart
-    Given the user is on the eBay main page
-    When the user enters "hdmi cable" in the search bar
-    And the user clicks the "Search" button
+    Given the user opens eBay main page
+    Then the eBay main page is displayed
+    When the user searches "hdmi cable"
     And user selects the "Buy It Now" filter
     And the user selects the "random" item
-    And the user clicks the "Add to Cart" button
+    And the user adds item to cart
     Then the item is added to the cart
 
   @id_3
-  Scenario: User can view the cart
-    Given the user is on the eBay main page
-    When the user clicks the "Cart" button
-    Then the cart page is displayed
+  Scenario: User can view empty cart
+    Given the user opens eBay Cart Page
+    Then the eBay cart page is displayed
 
   @id_4
   Scenario: User can remove an item from the cart
-    Given the user is on the eBay main page
-    When the user enters "optics" in the search bar
-    And the user clicks the "Search" button
+    Given the user opens eBay main page
+    Then the eBay main page is displayed
+    When the user searches "optics"
     And user selects the "Buy It Now" filter
     And the user selects the "random" item
-    And the user clicks the "Add to Cart" button
+    And the user adds item to cart
     Then the item is added to the cart
-    When the user clicks the "Cart" button
-    Then the cart page is displayed
+    Given the user opens eBay cart page
+    Then the eBay cart page is displayed
     When the user removes one random item from the cart
     Then the item is removed from the cart
 
