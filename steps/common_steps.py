@@ -15,9 +15,9 @@ def step_given_user_on_generic_page(context, page_name):
 @when('the user clicks the "{button_name}" button')
 def the_user_clicks_button(context, button_name):
     button = '_'.join(button_name.lower().split())
-    button_element = getattr(context.page, f"{button}_button", None)
-    if button_element:
-        button_element.click()
+    button_element = getattr(context.page, f"{button}_button")
+    if button_element():
+        button_element().click()
     else:
         raise ValueError(f"The '{button_name}' button was not found on the page")
 

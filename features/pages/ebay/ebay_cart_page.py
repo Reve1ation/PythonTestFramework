@@ -31,7 +31,7 @@ class EbayCartPage(GenericEbayPage):
         return self
 
     def verify_elements_present(self):
-        elements_to_verify = [self.cart_page_header]
+        elements_to_verify = [self.cart_page_header()]
 
         for element in elements_to_verify:
             if not element.is_displayed():
@@ -39,8 +39,7 @@ class EbayCartPage(GenericEbayPage):
         return True
 
     def remove_random_item(self):
-        element_position_id = random.randrange(len(self.remove_button()))
-        self.remove_button()[element_position_id].click()
+        random.choice(self.remove_button()).click()
         return self
 
     def verify_item_removed(self):

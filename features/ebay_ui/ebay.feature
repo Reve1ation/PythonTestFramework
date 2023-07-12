@@ -1,11 +1,13 @@
 Feature: eBay.com Functionality
 
+  @id_1
   Scenario: User can search for a product
     Given the user is on the eBay main page
     When the user enters "iPhone" in the search bar
     And the user clicks the "Search" button
     Then the eBay search results page is displayed
 
+  @id_2
   Scenario: User can add an item to the cart
     Given the user is on the eBay main page
     When the user enters "hdmi cable" in the search bar
@@ -15,11 +17,13 @@ Feature: eBay.com Functionality
     And the user clicks the "Add to Cart" button
     Then the item is added to the cart
 
+  @id_3
   Scenario: User can view the cart
     Given the user is on the eBay main page
     When the user clicks the "Cart" button
     Then the cart page is displayed
 
+  @id_4
   Scenario: User can remove an item from the cart
     Given the user is on the eBay main page
     When the user enters "optics" in the search bar
