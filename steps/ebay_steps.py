@@ -82,3 +82,9 @@ def step_then_user_is_signed_in(context, sign_in_status):
 @when("the user leaves its account")
 def step_when_user_leaves_account(context):
     context.page.sign_out()
+
+
+@when('the user applies the "{filter_name}" filter as "{filter_value}"')
+def step_impl(context, filter_name, filter_value):
+    context.page.set_ebay_filter(filter_name, filter_value)
+    context.search_results = filter_value

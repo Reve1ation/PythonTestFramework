@@ -1,5 +1,7 @@
 import random
 
+from selenium.webdriver.common.by import By
+
 from features.pages.ebay.generic_ebay_page import GenericEbayPage
 from features.pages.ebay.locators.ebay_search_results_page_locators import EbaySearchResultsPageLocators
 
@@ -37,6 +39,12 @@ class EbaySearchResultsPage(GenericEbayPage):
 
     def load(self):
         self.driver.get(self.URL)
+        return self
+
+    def set_ebay_filter(self, filter_name, filter_value):
+        filter_locator = (EbaySearchResultsPageLocators.FILTER_BASE[0],
+                          EbaySearchResultsPageLocators.FILTER_BASE[1].format(filter_name, filter_value))
+        self.find_element(filter_locator).click()
         return self
 
     def verify_elements_present(self):

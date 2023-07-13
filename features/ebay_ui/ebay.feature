@@ -50,53 +50,10 @@ Feature: eBay.com Functionality
     When the user leaves its account
     Given the user opens eBay main page
     Then the user is not signed in
-#
-#  Scenario: User can view their purchase history
-#    Given the user is logged in to their account
-#    When the user clicks the "Purchase History" link
-#    Then the purchase history page is displayed
-#
-#  Scenario: User can track a package
-#    Given the user is logged in to their account
-#    When the user clicks the "Track Package" link
-#    And the user enters the tracking number
-#    And the user clicks the "Track" button
-#    Then the tracking information is displayed
-#
-#  Scenario: User can change their account settings
-#    Given the user is logged in to their account
-#    When the user clicks the account dropdown menu
-#    And the user clicks the "Account Settings" option
-#    Then the account settings page is displayed
-#
-#  Scenario: User can update their email address
-#    Given the user is on the account settings page
-#    When the user clicks the "Edit" button for the email address
-#    And the user enters a new email address
-#    And the user clicks the "Save" button
-#    Then the email address is updated successfully
-#
-#  Scenario: User can view seller information
-#    Given the user is on the product details page
-#    When the user clicks the seller's username
-#    Then the seller's profile page is displayed
-#
-#  Scenario: User can ask a question to the seller
-#    Given the user is on the seller's profile page
-#    When the user clicks the "Ask a question" button
-#    And the user enters a question
-#    And the user clicks the "Send" button
-#    Then the question is submitted successfully
-#
-#  Scenario: User can view seller feedback
-#    Given the user is on the seller's profile page
-#    When the user clicks the "View feedback" link
-#    Then the seller's feedback page is displayed
-#
-#  Scenario: User can leave feedback for a seller
-#    Given the user is on the seller's feedback page
-#    When the user clicks the "Leave feedback" button
-#    And the user selects a feedback rating
-#    And the user enters feedback comments
-#    And the user clicks the "Submit" button
-#    Then the feedback is submitted successfully
+
+  @id_7
+  Scenario: User can filter search results
+    Given the user opens eBay main page
+    When the user searches "shoes"
+    And the user applies the "Brand" filter as "adidas"
+    Then the eBay search results page has specific results
