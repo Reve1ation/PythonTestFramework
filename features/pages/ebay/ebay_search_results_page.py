@@ -1,7 +1,7 @@
 import random
 
 from features.pages.ebay.generic_ebay_page import GenericEbayPage
-from features.pages.ebay.ebay_search_results_page_locators import EbaySearchResultsPageLocators
+from features.pages.ebay.locators.ebay_search_results_page_locators import EbaySearchResultsPageLocators
 
 
 class EbaySearchResultsPage(GenericEbayPage):

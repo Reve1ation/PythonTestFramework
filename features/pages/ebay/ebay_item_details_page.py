@@ -1,10 +1,9 @@
 import random
 
-from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
-from features.pages.ebay.ebay_item_details_page_locators import EbayItemDetailsPageLocators
+from features.pages.ebay.locators.ebay_item_details_page_locators import EbayItemDetailsPageLocators
 from features.pages.ebay.generic_ebay_page import GenericEbayPage
 from features.pages.widgets.add_to_cart_widget import AddToCartWidget
 

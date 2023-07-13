@@ -1,5 +1,5 @@
 from features.pages.ebay.generic_ebay_page import GenericEbayPage
-from features.pages.ebay.ebay_main_page_locators import EbayMainPageLocators
+from features.pages.ebay.locators.ebay_main_page_locators import EbayMainPageLocators
 
 
 class EbayMainPage(GenericEbayPage):

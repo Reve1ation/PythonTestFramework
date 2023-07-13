@@ -1,6 +1,6 @@
 import random
 
-from features.pages.ebay.ebay_cart_page_locators import EbayCartPageLocators
+from features.pages.ebay.locators.ebay_cart_page_locators import EbayCartPageLocators
 from features.pages.ebay.generic_ebay_page import GenericEbayPage
 
 

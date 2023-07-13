@@ -1,7 +1,7 @@
 Feature: eBay.com Functionality
 
   @id_1
-  Scenario: User can search for a product 11
+  Scenario: User can search for a product
     Given the user opens eBay main page
     Then the eBay main page is displayed
     When the user searches "iPhone"
@@ -36,23 +36,20 @@ Feature: eBay.com Functionality
     When the user removes one random item from the cart
     Then the item is removed from the cart
 
-#  Scenario: User can proceed to checkout
-#    Given the user is on the eBay cart page
-#    When the user clicks the "Proceed to Checkout" button
-#    Then the checkout page is displayed
+  @id_5
+  Scenario: User can sign in to their account
+    Given the user opens eBay main page
+    Then the user is not signed in
+    Given the user signing in as Valid eBay User
+    Then the user is signed in
 
-#  Scenario: User can sign in to their account
-#    Given the user is on the eBay homepage
-#    When the user clicks the "Sign In" button
-#    And the user enters their username and password
-#    And the user clicks the "Sign In" button
-#    Then the user is logged in to their account
-#
-#  Scenario: User can sign out of their account
-#    Given the user is logged in to their account
-#    When the user clicks the account dropdown menu
-#    And the user clicks the "Sign Out" option
-#    Then the user is logged out of their account
+  @id_6
+  Scenario: User can sign out of their account
+    Given the user signing in as Valid eBay User
+    Then the user is signed in
+    When the user leaves its account
+    Given the user opens eBay main page
+    Then the user is not signed in
 #
 #  Scenario: User can view their purchase history
 #    Given the user is logged in to their account
