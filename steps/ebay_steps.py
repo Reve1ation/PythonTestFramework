@@ -29,7 +29,6 @@ def step_when_the_user_select_random_item(context):
 
 @then("the eBay search results page has specific results")
 def step_then_search_results_displayed(context):
-    context.page = EbaySearchResultsPage(context)
     assert context.page.results_contains_text(context.search_results), "One or more results has unexpected text"
 
 
