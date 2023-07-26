@@ -1,3 +1,4 @@
+from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -8,6 +9,7 @@ class Page:
     def __init__(self, context):
         self.driver = context.driver
         self.wait = WebDriverWait(context.driver, self.TIMEOUT)
+        self.action = ActionChains(context.driver)
 
     def find_element(self, locator: tuple, message=""):
         return self.wait.until(EC.presence_of_element_located(locator),

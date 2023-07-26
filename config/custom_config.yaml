@@ -1,0 +1,7 @@
+users:
+  valid_ebay_user:
+    email: ' '
+    password: ' '
+  invalid_ebay_user:
+    email: 'wrong@email.me'
+    password: 'WrongPass'
