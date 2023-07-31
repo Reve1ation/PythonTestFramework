@@ -1,6 +1,8 @@
 from behave import given, when, then
 
 from features.pages.disney.disney_main_page import DisneyMainPage
+from features.pages.amazon.amazon_main_page import AmazonMainPage
+from features.pages.amazon.amazon_search_results_page import AmazonSearchResultsPage
 from features.pages.ebay.ebay_search_results_page import EbaySearchResultsPage
 from features.pages.google.google_search_page import GoogleSearchPage
 from features.pages.ebay.ebay_main_page import EbayMainPage
